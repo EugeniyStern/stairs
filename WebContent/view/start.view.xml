@@ -1,0 +1,19 @@
+<core:View xmlns:core='sap.ui.core' xmlns:mvc='sap.ui.core.mvc'
+	xmlns:t='sap.ui.table' xmlns='sap.m' xmlns:html='http://www.w3.org/1999/xhtml'
+	xmlns:custom='stairs.custom' controllerName='stairs.controller.start'>
+	<Page title='{i18n>StartPageTitle}'>
+		<content id='c1'>
+			<Panel height='800px' id='PanelOne' expandable='true'>
+				<HBox>
+					<items>
+						<Panel width='300px' />
+						<custom:tree_container>
+
+						</custom:tree_container>
+					</items>
+				</HBox>
+			</Panel>
+
+		</content>
+	</Page>
+</core:View>

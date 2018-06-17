@@ -1,0 +1,5 @@
+<mvc:View controllerName="stairs.controller.App" xmlns="sap.m"
+	height="100%" xmlns:mvc="sap.ui.core.mvc" displayBlock="true">
+	<!-- <App id="app" class="sapUiResponsiveMargin" width="auto" /> -->
+	<App id="app" />
+</mvc:View>

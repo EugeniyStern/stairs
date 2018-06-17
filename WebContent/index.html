@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv='Content-Type' content='text/html;charset=UTF-8' />
+
+<script id='sap-ui-bootstrap'
+	src=' https://openui5.hana.ondemand.com/resources/sap-ui-core.js'
+	data-sap-ui-theme='sap_bluecrystal' data-sap-ui-bindingSyntax="complex"
+	data-sap-ui-libs="sap.m,sap.ui.table,sap.ui.core,sap.ui.layout"
+	data-sap-ui-resourceroots='{ "stairs": "./" }'></script>
+</head>
+<body class="sapUiBody">
+	<script>
+		jQuery.sap.require("sap/ui/thirdparty/d3");
+		sap.ui.getCore().attachInit(function() {
+			app: new sap.ui.core.ComponentContainer({
+				name : "stairs",
+				height : "100%",
+				width : "100%"
+			}).placeAt("content");
+
+		});
+	</script>
+	<div id="content" class="sapUiBode"></div>
+
+</body>
+</html>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<rexpfd>
+    <destination path="C137L0051202224.leansoft.ru:/domains/leansoft.ru/stairs"/>
+    <options createDirectoryStructure="false" createSelectedOnly="true" descriptionFilePath="/stairs/WebContent/export_profile.rexpfd" overWriteExistingFiles="false" reviewSynchronize="false" saveSettings="true"/>
+    <selectedElements>
+        <file path="/stairs/WebContent/manifest.json"/>
+        <file path="/stairs/WebContent/index.html"/>
+        <file path="/stairs/WebContent/Component.js"/>
+        <folder path="/stairs/WebContent/controller"/>
+        <folder path="/stairs/WebContent/custom"/>
+        <folder path="/stairs/WebContent/i18n"/>
+        <folder path="/stairs/WebContent/js"/>
+        <folder path="/stairs/WebContent/view"/>
+    </selectedElements>
+</rexpfd>
