@@ -31,7 +31,7 @@ sap.ui.define([ 'sap/ui/core/Control' ], function(Control) {
 		init : function() {
 			jQuery.sap.require('stairs/js/jsondata');
 			jQuery.sap.require('stairs/js/three');
-			//jQuery.sap.require('stairs/js/math');
+			// jQuery.sap.require('stairs/js/math');
 			jQuery.sap.require('stairs/js/TrackballControls');
 			ComponentId.id = this.getId() + "-ThreeJSCont";
 			this._html = new sap.ui.core.HTML({
@@ -58,7 +58,7 @@ sap.ui.define([ 'sap/ui/core/Control' ], function(Control) {
 					alpha : true
 				});
 				this.renderer.setSize(window.innerWidth * 0.75,
-						window.innerHeight * 0.9);
+						window.innerHeight * 0.8);
 				oContElement.appendChild(this.renderer.domElement);
 
 				this.scene = new THREE.Scene();
@@ -96,6 +96,73 @@ sap.ui.define([ 'sap/ui/core/Control' ], function(Control) {
 				this.camera.lookAt(this.scene.position);
 				ComponentId.Objects = this;
 
+				// draw something
+				var light, object;
+				var scene = this.scene;
+				var map = new THREE.TextureLoader()
+						.load('texture/world-cup-2018-day-5.png');
+				map.wrapS = map.wrapT = THREE.RepeatWrapping;
+				map.anisotropy = 16;
+				var material = new THREE.MeshPhongMaterial({
+					map : map,
+					side : THREE.DoubleSide
+				});
+				//
+				object = new THREE.Mesh(new THREE.SphereBufferGeometry(75, 20,
+						10), material);
+				object.position.set(-300, 0, 200);
+				scene.add(object);
+				object = new THREE.Mesh(new THREE.IcosahedronBufferGeometry(75,
+						1), material);
+				object.position.set(-100, 0, 200);
+				scene.add(object);
+				object = new THREE.Mesh(new THREE.OctahedronBufferGeometry(75,
+						2), material);
+				object.position.set(100, 0, 200);
+				scene.add(object);
+				object = new THREE.Mesh(new THREE.TetrahedronBufferGeometry(75,
+						0), material);
+				object.position.set(300, 0, 200);
+				scene.add(object);
+				//
+				object = new THREE.Mesh(new THREE.PlaneBufferGeometry(100, 100,
+						4, 4), material);
+				object.position.set(-300, 0, 0);
+				scene.add(object);
+				object = new THREE.Mesh(new THREE.BoxBufferGeometry(100, 100,
+						100, 4, 4, 4), material);
+				object.position.set(-100, 0, 0);
+				scene.add(object);
+				object = new THREE.Mesh(new THREE.CircleBufferGeometry(50, 20,
+						0, Math.PI * 2), material);
+				object.position.set(100, 0, 0);
+				scene.add(object);
+				object = new THREE.Mesh(new THREE.RingBufferGeometry(10, 50,
+						20, 5, 0, Math.PI * 2), material);
+				object.position.set(300, 0, 0);
+				scene.add(object);
+				//
+				object = new THREE.Mesh(new THREE.CylinderBufferGeometry(25,
+						75, 100, 40, 5), material);
+				object.position.set(-300, 0, -200);
+				scene.add(object);
+				var points = [];
+				for (var i = 0; i < 50; i++) {
+					points.push(new THREE.Vector2(Math.sin(i * 0.2)
+							* Math.sin(i * 0.1) * 15 + 50, (i - 5) * 2));
+				}
+				object = new THREE.Mesh(new THREE.LatheBufferGeometry(points,
+						20), material);
+				object.position.set(-100, 0, -200);
+				scene.add(object);
+				object = new THREE.Mesh(new THREE.TorusBufferGeometry(50, 20,
+						20, 20), material);
+				object.position.set(100, 0, -200);
+				scene.add(object);
+				object = new THREE.Mesh(new THREE.TorusKnotBufferGeometry(50,
+						10, 50, 20), material);
+				object.position.set(300, 0, -200);
+				scene.add(object);
 			} else {
 			}
 

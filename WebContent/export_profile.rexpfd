@@ -10,6 +10,7 @@
         <folder path="/stairs/WebContent/custom"/>
         <folder path="/stairs/WebContent/i18n"/>
         <folder path="/stairs/WebContent/js"/>
+        <folder path="/stairs/WebContent/texture"/>
         <folder path="/stairs/WebContent/view"/>
     </selectedElements>
 </rexpfd>
